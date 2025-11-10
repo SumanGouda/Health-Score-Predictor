@@ -1,0 +1,48 @@
+# ----------------------------------------------------------------------
+# System Files
+# ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+
+# ----------------------------------------------------------------------
+# Python, Virtual Environments, and Cache
+# ----------------------------------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Virtual environments
+.venv/
+venv/
+env/
+myenv/
+*/venv/
+*/.venv/
+
+# ----------------------------------------------------------------------
+# Large Model and Data Files (LFS TRACKED - DO NOT IGNORE .pkl)
+# ----------------------------------------------------------------------
+# ONLY THESE REMAIN IGNORED:
+*.h5
+*.joblib
+*.sav
+*.model
+*.bin
+*.pt
+
+# ----------------------------------------------------------------------
+# Jupyter and IDE/Editor Files
+# ----------------------------------------------------------------------
+Deploy_model.ipynb
+
+# VS Code directory (optional, but good practice)
+.vscode/
+
+# Logs and Data
+*.log
+*.csv
+*.txt
