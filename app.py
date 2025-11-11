@@ -1,6 +1,7 @@
 import streamlit as st 
 import pickle
 import pandas as pd
+import requests
 
 # Add at the top of your app
 st.set_page_config(
@@ -445,14 +446,23 @@ with st.expander("🍎 Smart Nutrition Analysis", expanded=True):
         @st.cache_resource
         def load_model():
             try:
-                with open('D:\IMP  ML  PROJECTS\Healthify Model\deploy_model.pkl', 'rb') as f:
-                    model = pickle.load(f)
+                # ✅ Hugging Face direct model link (RAW file link)
+                url = "https://huggingface.co/sumangouda/healthify-model/resolve/main/deploy_model.pkl"
+
+                # ✅ Download the model file from Hugging Face
+                response = requests.get(url)
+                response.raise_for_status()  # raise error if failed
+
+                # ✅ Load the pickle model from downloaded bytes
+                model = pickle.loads(response.content)
+                st.success("✅ Model loaded successfully from Hugging Face!")
                 return model
-            
-            except:
-                st.warning("Model file not found. Using default model.")
+
+            except Exception as e:
+                st.error(f"⚠️ Error loading model: {e}")
                 return None
-        
+
+
         # Load the model
         model = load_model()
         
