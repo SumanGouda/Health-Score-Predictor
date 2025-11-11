@@ -3,7 +3,6 @@
 # ----------------------------------------------------------------------
 .DS_Store
 Thumbs.db
-.ipynb_checkpoints/
 
 # ----------------------------------------------------------------------
 # Python, Virtual Environments, and Cache
@@ -42,8 +41,3 @@ Deploy_model.ipynb
 
 # VS Code directory (optional, but good practice)
 .vscode/
-
-# Logs and Data
-*.log
-*.csv
-*.txt
